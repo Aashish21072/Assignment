@@ -12,29 +12,29 @@ const Journey = () => {
   ];
 
   return (
-    <section className="bg-white py-24 px-6 md:px-24 font-sans">
-      <div className="flex flex-col items-center text-center mb-16">
-        <div className="inline-flex items-center space-x-2 bg-[#FEF3C7] border border-[#FDE68A] px-4 py-1.5 rounded-full mb-6">
+    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-24 font-sans">
+      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
+        <div className="inline-flex items-center space-x-2 bg-[#FEF3C7] border border-[#FDE68A] px-3 sm:px-4 py-1 rounded-full mb-4 sm:mb-6">
           <span className="w-2 h-2 bg-[#F28C28] rounded-full"></span>
-          <span className="text-[#F28C28] text-[10px] font-bold uppercase tracking-widest">
+          <span className="text-[#F28C28] text-[9px] sm:text-[10px] font-bold uppercase tracking-widest">
             Journey
           </span>
         </div>
-        <h2 className="text-3xl md:text-[40px] font-medium text-[#1A1A1A] leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-[40px] font-medium text-[#1A1A1A] leading-snug sm:leading-tight">
           We are a manufacturer. <br /> Tomorrow, Today Engineering
         </h2>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-16 items-start max-w-7xl mx-auto">
-        <div className="w-full lg:w-1/2 relative min-h-[500px]">
-          <div className="relative z-10 w-4/5 rounded-[32px] overflow-hidden shadow-2xl">
+      <div className="flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
+        <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
+          <div className="relative z-10 w-full sm:w-4/5 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl mx-auto">
             <img
               src={factoryTop}
               alt="Manufacturing"
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="absolute bottom-[-250px] right-0 w-4/5 rounded-[32px] overflow-hidden shadow-2xl border-[12px] border-white z-20">
+          <div className="absolute bottom-[-150px] sm:bottom-[-200px] lg:bottom-[-250px] right-0 w-full sm:w-4/5 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl border-[8px] sm:border-[12px] border-white z-20 mx-auto lg:mx-0">
             <img
               src={factoryBottom}
               alt="Factory Floor"
@@ -43,22 +43,23 @@ const Journey = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 space-y-6">
+        <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8">
           {milestones.map((item, idx) => (
             <div
               key={idx}
-              className={`group flex items-start border border-[#FDE68A]/30 rounded-[20px] p-6 transition-all duration-300
-        ${idx % 2 === 0 ? "ml-8 md:ml-12" : ""} bg-[#FFFBEB] hover:bg-[#FEF3C7]`}
+              className={`group flex flex-col sm:flex-row items-start border border-[#FDE68A]/30 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 transition-all duration-300 bg-[#FFFBEB] hover:bg-[#FEF3C7] ${
+                idx % 2 === 0 ? "sm:ml-4 md:ml-8" : ""
+              }`}
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#F28C28] flex items-center justify-center text-white font-black text-lg mr-6 shadow-lg shadow-orange-200">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#F28C28] flex items-center justify-center text-white font-black text-base sm:text-lg mr-4 sm:mr-6 shadow-lg shadow-orange-200 mb-3 sm:mb-0">
                 {item.id}
               </div>
 
               <div className="flex flex-col">
-                <h4 className="text-[#F28C28] font-bold text-lg leading-tight mb-1">
+                <h4 className="text-[#F28C28] font-bold text-base sm:text-lg leading-tight mb-1">
                   {item.title}
                 </h4>
-                <p className="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                <p className="text-[#6B7280] text-[12px] sm:text-[13px] font-medium leading-relaxed">
                   We operate across India, Africa, and the Middle East, with a
                   rapidly expanding global footprint.
                 </p>

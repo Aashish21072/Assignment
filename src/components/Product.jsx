@@ -22,30 +22,28 @@ const Product = ({ index, setIndex }) => {
   };
 
   return (
-    <div className="w-full h-screen relative flex items-center justify-center overflow-x-hidden">
+    <div className="w-full h-[80vh] sm:h-[90vh] md:h-screen relative flex items-center justify-center overflow-x-hidden">
 
       <img
         src={images[index]}
         alt="machine"
-        className="max-w-full max-h-screen object-contain"
+        className="max-w-full max-h-[70vh] sm:max-h-[80vh] md:max-h-screen object-contain"
       />
 
-      <div className="absolute right-10 bottom-20 flex gap-4">
-
+      <div className="absolute right-4 sm:right-6 md:right-10 bottom-12 sm:bottom-16 flex gap-3 sm:gap-4">
         <button
           onClick={prevImage}
-          className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center text-xl font-bold"
+          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-orange-500 text-white flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold"
         >
           &lt;
         </button>
 
         <button
           onClick={nextImage}
-          className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center text-xl font-bold"
+          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-orange-500 text-white flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold"
         >
           &gt;
         </button>
-
       </div>
 
     </div>
