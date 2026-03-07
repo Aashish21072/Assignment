@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Versatile from "../components/Versatile";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
-import Product from "../components/product";
+import Product from "../components/Product";
 import GetInTouch from "../components/GetInTouch";
 import GlobalPartner from "../components/GlobalPartner";
 import Footer from "../components/Footer";
