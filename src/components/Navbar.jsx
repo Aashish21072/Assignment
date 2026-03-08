@@ -24,62 +24,70 @@ const Navbar = () => {
     <>
       <nav className="w-full bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="flex justify-between items-center h-16">
-
-            {/* Logo */}
             <Link to="/" className="flex items-center">
               <img src={logo} alt="ENGIRISE" className="h-10 md:h-12 w-auto" />
             </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8 font-medium">
+              <Dropdown
+                title="Product"
+                links={[
+                  { name: "Excavator", to: "/products/0" },
+                  { name: "Loaders", to: "/products/1" },
+                  { name: "Forklifts", to: "/products/2" },
+                  { name: "Road Machinery", to: "/products/3" },
+                  { name: "MEWPs", to: "/products/4" },
+                  { name: "Agriculture", to: "/products/5" },
+                  { name: "Warehouse Equipment", to: "/products/6" },
+                  { name: "Concrete Machinery", to: "/products/7" },
+                  { name: "Cranes", to: "/products/8" },
+                ]}
+              />
 
-              <Dropdown title="Product" links={[
-                { name: "Excavator", to: "/products/0" },
-                { name: "Loaders", to: "/products/1" },
-                { name: "Forklifts", to: "/products/2" },
-                { name: "Road Machinery", to: "/products/3" },
-                { name: "MEWPs", to: "/products/4" },
-                { name: "Agriculture", to: "/products/5" },
-                { name: "Warehouse Equipment", to: "/products/6" },
-                { name: "Concrete Machinery", to: "/products/7" },
-                { name: "Cranes", to: "/products/8" },
-              ]} />
-
-              <Dropdown title="Company Overview" links={[
-                { name: "Career", to: "/career" },
-                { name: "Contact Us", to: "/contact" },
-              ]} />
+              <Dropdown
+                title="Company Overview"
+                links={[
+                  { name: "Career", to: "/career" },
+                  { name: "Contact Us", to: "/contact" },
+                ]}
+              />
 
               <Link to="/about" className="hover:text-red-600 transition">
                 About Us
               </Link>
 
-              <Dropdown title="Dealer" links={[
-                { name: "Find a Dealer", to: "/find-dealer" },
-                { name: "Become a Dealer", to: "/become-dealer" },
-              ]} />
-
+              <Dropdown
+                title="Dealer"
+                links={[
+                  { name: "Find a Dealer", to: "/find-dealer" },
+                  { name: "Become a Dealer", to: "/become-dealer" },
+                ]}
+              />
             </div>
 
-            {/* Right Section */}
             <div className="flex items-center gap-2 md:gap-4">
-
               <GlobeDropdown />
 
-              {/* Search */}
               <button
                 onClick={() => setShowSearch(!showSearch)}
                 className="p-2 hover:bg-gray-100 rounded-md"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </button>
 
-              {/* Enquiry Button */}
               <button
                 onClick={() => navigate("/products")}
                 className="hidden sm:block bg-red-600 text-white px-5 py-2 text-sm font-semibold rounded hover:bg-red-700 transition"
@@ -87,55 +95,69 @@ const Navbar = () => {
                 Enquiry
               </button>
 
-              {/* Mobile Menu */}
               <button
                 onClick={() => setMobileMenu(!mobileMenu)}
                 className="lg:hidden p-2 hover:bg-gray-100 rounded-md"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d={mobileMenu
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"}
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d={
+                      mobileMenu
+                        ? "M6 18L18 6M6 6l12 12"
+                        : "M4 6h16M4 12h16M4 18h16"
+                    }
                   />
                 </svg>
               </button>
-
             </div>
-
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenu && (
           <div className="lg:hidden border-t bg-white shadow-md">
             <div className="flex flex-col px-5 py-4 space-y-3">
+              <DropdownMobile
+                title="Product"
+                links={[
+                  { name: "Excavator", to: "/products/0" },
+                  { name: "Loaders", to: "/products/1" },
+                  { name: "Forklifts", to: "/products/2" },
+                  { name: "Road Machinery", to: "/products/3" },
+                  { name: "MEWPs", to: "/products/4" },
+                  { name: "Agriculture", to: "/products/5" },
+                  { name: "Warehouse Equipment", to: "/products/6" },
+                  { name: "Concrete Machinery", to: "/products/7" },
+                  { name: "Cranes", to: "/products/8" },
+                ]}
+              />
 
-              <DropdownMobile title="Product" links={[
-                { name: "Excavator", to: "/products/0" },
-                { name: "Loaders", to: "/products/1" },
-                { name: "Forklifts", to: "/products/2" },
-                { name: "Road Machinery", to: "/products/3" },
-                { name: "MEWPs", to: "/products/4" },
-                { name: "Agriculture", to: "/products/5" },
-                { name: "Warehouse Equipment", to: "/products/6" },
-                { name: "Concrete Machinery", to: "/products/7" },
-                { name: "Cranes", to: "/products/8" },
-              ]} />
-
-              <DropdownMobile title="Company Overview" links={[
-                { name: "Career", to: "/career" },
-                { name: "Contact Us", to: "/contact" },
-              ]} />
+              <DropdownMobile
+                title="Company Overview"
+                links={[
+                  { name: "Career", to: "/career" },
+                  { name: "Contact Us", to: "/contact" },
+                ]}
+              />
 
               <Link to="/about" className="py-2 border-b">
                 About Us
               </Link>
 
-              <DropdownMobile title="Dealer" links={[
-                { name: "Find a Dealer", to: "/find-dealer" },
-                { name: "Become a Dealer", to: "/become-dealer" },
-              ]} />
+              <DropdownMobile
+                title="Dealer"
+                links={[
+                  { name: "Find a Dealer", to: "/find-dealer" },
+                  { name: "Become a Dealer", to: "/become-dealer" },
+                ]}
+              />
 
               <button
                 onClick={() => navigate("/products")}
@@ -143,13 +165,11 @@ const Navbar = () => {
               >
                 Enquiry
               </button>
-
             </div>
           </div>
         )}
       </nav>
 
-      {/* Search Bar */}
       {showSearch && (
         <div className="bg-gray-100 border-t py-5 px-4">
           <div className="max-w-xl mx-auto flex gap-2">
@@ -187,17 +207,24 @@ const Navbar = () => {
 
 const Dropdown = ({ title, links }) => (
   <div className="relative group cursor-pointer">
-
     <div className="flex items-center gap-1 hover:text-red-600">
       {title}
-      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-          d="M19 9l-7 7-7-7" />
+      <svg
+        className="w-3 h-3"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M19 9l-7 7-7-7"
+        />
       </svg>
     </div>
 
     <div className="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-
       {links.map((link, i) => (
         <Link
           key={i}
@@ -207,7 +234,6 @@ const Dropdown = ({ title, links }) => (
           {link.name}
         </Link>
       ))}
-
     </div>
   </div>
 );
@@ -217,7 +243,6 @@ const DropdownMobile = ({ title, links }) => {
 
   return (
     <div>
-
       <button
         onClick={() => setOpen(!open)}
         className="flex justify-between w-full py-2 border-b"
@@ -235,7 +260,6 @@ const DropdownMobile = ({ title, links }) => {
           ))}
         </div>
       )}
-
     </div>
   );
 };
@@ -246,7 +270,7 @@ const GlobeDropdown = () => {
   return (
     <div className="relative">
       <button
-        onClick={() => setOpen(prev => !prev)}
+        onClick={() => setOpen((prev) => !prev)}
         className="text-black hover:text-red-600 flex items-center p-2 rounded-md hover:bg-gray-100 transition"
       >
         <svg
